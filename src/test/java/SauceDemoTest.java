@@ -35,9 +35,11 @@ public class SauceDemoTest {
 
     @Test
     public void testSauceDemoSuccessLogin() {
-
+        log.info("Authorize using credentials");
         loginPage.authorize(config.getCredentials().getLogin(), config.getCredentials().getPassword());
-        Assert.assertEquals(driver.findElement(By.xpath("//span[@data-test='title']")).getText(), "Products");
+
+        log.info("Asserting Products page title");
+        Assert.assertEquals(productsPage.getProductPageTitle().getText(), "Products");
 
     }
 
