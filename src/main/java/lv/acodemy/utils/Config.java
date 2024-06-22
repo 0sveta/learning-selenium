@@ -1,5 +1,4 @@
 package lv.acodemy.utils;
-
 import org.yaml.snakeyaml.Yaml;
 
 import java.io.IOException;
@@ -8,6 +7,7 @@ import java.io.InputStream;
 public class Config {
 
     private Credentials credentials;
+    private WebAppConfig webAppConfig;
 
     public static class Credentials {
 
@@ -29,6 +29,26 @@ public class Config {
         public void setPassword(String password) {
             this.password = password;
         }
+    }
+
+    public static class WebAppConfig {
+        private String url;
+
+        public String getUrl() {
+            return url;
+        }
+
+        public void setUrl(String url) {
+            this.url = url;
+        }
+    }
+
+    public WebAppConfig getWebAppConfig() {
+        return webAppConfig;
+    }
+
+    public void setWebAppConfig(WebAppConfig webAppConfig) {
+        this.webAppConfig = webAppConfig;
     }
 
     public Credentials getCredentials() {
